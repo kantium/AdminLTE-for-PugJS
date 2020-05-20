@@ -1,0 +1,14 @@
+extends layout/base
+block content 
+    section.content
+        div.row
+            div.col-md-12
+                div.alert.alert-danger.alert-dismissible
+                    button.close(type="button", data-dismiss="alert", aria-hidden="true") x
+                    h4
+                        i.icon.fa.fa-ban
+                        span= error.status
+                        |  - 
+                        span= message
+                    pre #{error.stack}
+                    

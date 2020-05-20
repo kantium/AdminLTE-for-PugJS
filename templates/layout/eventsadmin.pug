@@ -1,0 +1,32 @@
+div.col-md-6
+    div.box.box-warning
+        div.box-header
+            h3.box-title Events
+
+            div.box-tools
+                ul.pagination.pagination-sm.no-margin.pull-right
+                    li
+                        a.fa.fa-plus(href="#" data-toggle="modal" data-target="#createEventModal")
+        div.box-body.no-padding
+            table.table
+                tbody
+                    tr
+                        th(style="width: 10px") #
+                        th Event
+                        th Date
+                        th Price
+                        th(style="width: 180px") Remaining
+                        th(style="width: 80px") Action
+                    tr
+                        td 1.
+                        td Cyrano de Bergerac
+                        td 08.02.2018
+                        td 55 CHF
+                        td 
+                            div.progress.progress-xs
+                                div.progress-bar.progress-bar-danger(style="width: 8%")
+                        td
+                            button.btn-xs.btn-default.btn-flat(type="button", data-toggle="modal", data-target="#shopModal")
+                                i.fa.fa-shopping-cart
+                            button.btn-xs.btn-default.btn-flat.btn-danger(type="button", data-toggle="modal", data-target="#lockEventModal")
+                                i.fa.fa-remove

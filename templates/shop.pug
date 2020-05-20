@@ -1,0 +1,24 @@
+extends layout/base
+block content 
+    section.content-header 
+        h1 Shop
+            small All Events
+        ol.breadcrumb
+            li
+                a(href='index').logo
+                    i.fa.fa-shopping-cart
+                    | Home
+            li.active Shop
+
+    section.content
+        //-
+            h2.page-header Featured
+            div.row
+                include layout/artistclient.pug 
+                include layout/artistclient.pug 
+                include layout/artistclient.pug 
+
+        //- h2.page-header Events
+        div.row
+           include layout/eventsclient.pug 
+

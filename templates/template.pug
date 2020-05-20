@@ -1,0 +1,79 @@
+extends layout/base
+block content 
+    section.content-header 
+        h1 Dashboard
+            //- small Control panel
+        ol.breadcrumb
+            li
+                a(href='index').logo
+                    i.fa.fa-dashboard
+                    | Home
+            li.active Dashboard
+
+    section.content
+        p Name: #{content['Name']}
+        p Name: #{content['Age']}
+
+        each friendName in content['Friends']
+            p #{friendName}
+
+    
+        - var pets = ['cat', 'dog', 'pouet']
+        each petName in pets
+            p #{petName}
+
+        ul
+            each val in [1, 2, 3, 4, 5, 6]
+                li= val
+        
+
+        if content['Male']
+            p Male #{content['Male']}
+
+        else
+            p Femme
+            | 2
+            | 3
+            |
+            | 4
+
+        unless content['Male']
+            p Femme
+        
+        if not content['Male']
+            p Femme
+
+        
+        p #{content['html'].upper()}
+        p= content['html'] + "(escaped)"
+        p!= content['html'] + "(unescaped)"
+
+        script.
+            if (true)
+                console.log('you are awesome')
+            else
+                console.log('use pug')
+
+        - var riskyBusiness = "<em>Some of the girls are wearing my mother's clothing.</em>";
+        .quote
+            p Joel: !{riskyBusiness}
+
+        p.
+          This is a very long and boring paragraph that spans multiple lines.
+          Suddenly there is a #[strong strongly worded phrase] that cannot be
+          #[em ignored].
+        p.
+          And here's an example of an interpolated tag with an attribute:
+          #[q(lang="es") ¡Hola Mundo!]
+
+        - var n = 0;
+        ul
+            while not n == 4:
+                li= n
+
+        - var values = [];
+        ul
+            each val in values.length if values else ['There are no values']
+                li= val
+
+

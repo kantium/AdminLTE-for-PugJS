@@ -1,0 +1,28 @@
+extends layout/base
+block content 
+    section.content-header 
+        h1 Admin Zone
+        ol.breadcrumb
+            li
+                a(href='index').logo
+                    i.fa.fa-gear
+                    | Home
+            li.active Admin Zone
+
+    section.content
+        //- h2.page-header Statistics
+        //- div.row
+        //-    include layout/statblock.pug
+        //-    +statblock("Tickets Sold", "132")(icon="fa-ticket",color="bg-aqua") 
+        //-    +statblock("Unique Users", "78")(icon="ion ion-person-add",color="bg-green") 
+        //-    +statblock("Tickets Remaining", '47<sup style="font-size: 20px">%</sup>')(icon="fion ion-pie-graph",color="bg-yellow") 
+        //-    +statblock("Tickets Burned", "53")(icon="ion ion-stats-bars",color="bg-red") 
+
+        h2.page-header Management
+        div.row
+           include layout/ticketsadmin.pug 
+        // include layout/eventsadmin.pug 
+
+        //- h2.page-header Timeline
+        //- div.row
+        //-    include layout/timeline.pug

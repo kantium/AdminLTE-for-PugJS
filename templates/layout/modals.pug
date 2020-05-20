@@ -1,0 +1,141 @@
+
+
+
+
+
+mixin formgoupinput(title)
+    div.form-group(style="display:"+attributes.display+"")
+        label.col-sm-2.control-label(for="inputEmail3")= title
+        div.col-sm-10
+            div.input-group
+                span.input-group-addon
+                    i.fa(class!=attributes.icon)
+                input.form-control(type="text", placeholder!=attributes.placeholder, disabled!=attributes.disabled, autocomplete!=attributes.autocomplete, value!=attributes.value, name=attributes.name, id=attributes.id)
+
+mixin modaldialog(title, btname)
+    div.modal.fade(id=attributes.id, tabindex="-1", role="dialog", aria-labelledby="transfertTicketModalLabel")
+        div.modal-dialog(role="document")
+            div.modal-content
+
+                div.box.box-widget
+                    div.box-body.no-padding
+
+                        form.form-horizontal(id="form"+attributes.id)
+
+                            div.modal-header
+                                button.close(type="button", data-dismiss="modal", aria-label="Close")
+                                    span(aria-hidden="true") &times;
+                                h4.modal-title#myModalLabel= title
+                            div.modal-body
+                                    div.box-body
+                                        if block
+                                            block
+                                        else
+                                            p No content provided
+                            div.modal-footer
+                                span#modaldialogmsg(style="font-size:18px;color:red;text-align:left;float:left;width:400px;")
+                                button.btn.btn-default(type="button", data-dismiss="modal") Close
+                                button.btn.btn-warning(type="submit", form="form"+attributes.id)= btname
+
+                    div.overlay#modaldialogoverlay(style="display:none;")
+                        i.fa.fa-refresh.fa-spin
+
+
+
++modaldialog("Buy Ticket", "Buy")(id="shopModal")
+            input.form-control(type="hidden", name="eventid")
+            +formgoupinput("Event")(icon="fa-bullhorn", disabled=true, name="eventname")
+            input.form-control(type="hidden", name="eventname")
+            +formgoupinput("Address")(placeholder="??", icon="fa-user", disabled=true, name="customeraddress")
+            input.form-control(type="hidden", name="customeraddress")
+            +formgoupinput("Email")(placeholder="??", icon="fa-envelope", disabled=false, name="customeremail", autocomplete='email')
+            +formgoupinput("Price")(placeholder="??", icon="fa-eur", disabled=true, name="eventprice")
+            input.form-control(type="hidden", name="eventprice")
+            // +formgoupinput("Credit Card")(value="5100 0000 0000 0000",type=text, icon="fa-credit-card", name="customercc", disabled=false)
+            // +formgoupinput("EventID")(icon="fa-bullhorn", id="eventid", name="eventid", display="none")
+            // +formgoupinput("EventID")(icon="fa-bullhorn", disabled=false, id="eventid", name="eventid")
+
+
+
+
++modaldialog("Ticket Transfert", "Transfert")(id="transfertTicketModal")
+    +formgoupinput("Ticket ID")(placeholder="T4303", icon="fa-ticket", disabled=true)
+    +formgoupinput("From")(placeholder="0x301AB7263FA8133CB", icon="fa-user", disabled=true, name="from_address")
+    +formgoupinput("To")(placeholder="0x301AB7263FA8133CB", icon="fa-user", disabled=false, name="to_address")
+    +formgoupinput("New Email")(placeholder="Your Email", icon="fa-envelope", disabled=false, autocomplete='email')
+
+
++modaldialog("Burn Ticket", "Burn")(id="burnModal")
+    +formgoupinput("Ticket ID")(icon="fa-ticket", disabled=true, name="ticketid")
+    input.form-control(type="hidden", name="ticketid")
+    +formgoupinput("Owner")(icon="fa-user", disabled=true, name="owner")
+    input.form-control(type="hidden", name="owner")
+
+
+
++modaldialog("Create New Event", "Deploy Smart Contract Event")(id="createEventModal")
+    +formgoupinput("Event name")(placeholder="Cyrano", icon="fa-bullhorn", disabled=false)
+    +formgoupinput("Places")(placeholder="300", icon="fa-users", disabled=false)
+    +formgoupinput("Price")(placeholder="10,00", icon="fa-eur", disabled=false)
+
+
++modaldialog("Lock Event", "Lock Smart Contract")(id="lockEventModal")
+    +formgoupinput("Event")(placeholder="T4303", icon="fa-bullhorn", disabled=false)
+
+
+
+
+
+
+mixin successmodaldialog(title)
+    div.modal.modal-success.fade(id=attributes.id, tabindex="-1", role="dialog", aria-labelledby="ErrorModalLabel", data-backdrop="static", style="background: rgba(0, 0, 0, 0.8);")
+        div.modal-dialog
+            div.modal-content
+                div.modal-header
+                    // button.close(type="button", data-dismiss="modal", aria-label="Close")
+                        span(aria-hidden="true") &times;
+                    h4.modal-title#myModalLabel= title
+                div.modal-body
+                    form.form-horizontal
+                        div.box-body
+                            if block
+                                block
+                            else
+                                p No content provided
+                div.modal-footer
+                    //button.btn.btn-default(type="button", onClick="window.location.reload()", data-dismiss="modal") Reload page
+                    button.btn.btn-default(type="button", data-dismiss="modal") Close
+
+
+
+mixin errormodaldialog(title)
+    div.modal.modal-danger.fade(id=attributes.id, tabindex="-1", role="dialog", aria-labelledby="ErrorModalLabel", data-backdrop="static", style="background: rgba(0, 0, 0, 0.8);")
+        div.modal-dialog
+            div.modal-content
+                div.modal-header
+                //
+                    button.close(type="button", data-dismiss="modal", aria-label="Close")
+                        span(aria-hidden="true") &times;
+                    h4.modal-title#myModalLabel= title
+                div.modal-body
+                    form.form-horizontal
+                        div.box-body
+                            if block
+                                block
+                            else
+                                p No content provided
+                div.modal-footer
+                    button.btn.btn-default(type="button", onClick="window.location.reload()", data-dismiss="modal") Reload page
+
+
++errormodaldialog("MetaMask")(id="metalocked")
+    p MetaMask is locked. Please unlock it and reload this page.
+
++errormodaldialog("MetaMask")(id="nometa")
+    p MetaMask is not detected. Please install it and reload this page.
+
++errormodaldialog("MetaMask")(id="metanetwork")
+    p MetaMask RPC is not correctly set. Please set RPC to "https://parity.westeurope.cloudapp.azure.com:8443" and reload this page.
+
++successmodaldialog("Payment")(id="paymentdone")
+    p Payment done !

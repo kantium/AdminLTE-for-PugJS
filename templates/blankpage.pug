@@ -1,0 +1,328 @@
+extends layout/base
+block content 
+    section.content-header 
+        h1 hello1
+            small Control panel
+        ol.breadcrumb
+            li
+                a(href='index').logo
+                    i.fa.fa-dashboard
+                    | Home
+            li.active Dashboard
+
+    section.content
+        div.row
+            div.col-md-12
+                div.alert.alert-danger.alert-dismissible
+                    button.close(type="button", data-dismiss="alert", aria-hidden="true") x
+                    h4
+                        i.icon.fa.fa-ban
+                        | Alert !
+                    You need to have MetaMask opened, with a custom RPC set to node1.azure.com:8545
+    
+
+        h2.page-header Statistics
+        div.row
+            div.col-lg-3.col-xs-6
+                div.small-box.bg-aqua
+                    div.inner
+                        h3 150
+                        p Tickets sold
+                    div.icon
+                        i.fa.fa-ticket
+                    a(href='index').small-box-footer 
+                        | More info 
+                        i.fa.fa-arrow-circle-right
+
+            div.col-lg-3.col-xs-6
+                div.small-box.bg-green
+                    div.inner
+                        h3 65
+                        p Tickets sold
+                    div.icon
+                        i.fa.ion-stats-bars
+                    a(href='index').small-box-footer 
+                        | More info 
+                        i.fa.fa-arrow-circle-right
+
+            div.col-lg-3.col-xs-6
+                div.small-box.bg-yellow
+                    div.inner
+                        h3 33
+                        p Tickets sold
+                    div.icon
+                        i.ion.ion-person-add
+                    a(href='index').small-box-footer 
+                        | More info 
+                        i.fa.fa-arrow-circle-right
+
+            div.col-lg-3.col-xs-6
+                div.small-box.bg-purple
+                    div.inner
+                        h3 45
+                            sup(style="font-size: 20px") %
+                        p Tickets sold
+                    div.icon
+                        i.ion.ion-pie-graph
+                    a(href='index').small-box-footer 
+                        | More info 
+                        i.fa.fa-arrow-circle-right
+
+        h2.page-header Statistics
+        div.row
+            div.col-md-12
+                ul.timeline
+                    li.time-label
+                        span.bg-red 10 Feb. 2014
+                    li
+                        i.fa.fa-envelope.bg-blue
+                        div.timeline-item
+                            span.time
+                                i.fa.fa-clock-o 12:05
+                            h3.timeline-header
+                                a(href='index') Support Team
+                                |  sent you an email
+                    li
+                        i.fa.fa-user.bg-green
+                        div.timeline-item
+                            span.time
+                                i.fa.fa-clock-o 5 mins ago
+                            h3.timeline-header
+                                a(href='index') Sarah Young
+                                |  accepted your friend request
+                    li
+                        i.fa.fa-comments.bg-yellow
+                        div.timeline-item
+                            span.time
+                                i.fa.fa-clock-o 27 mins ago
+                            h3.timeline-header
+                                a(href='index') Jay White
+                                |  commented on your post
+                    li.time-label
+                        span.bg-green 3 Jan. 2014
+                    li
+                        i.fa.fa-camera.bg-purple
+                        div.timeline-item
+                            span.time
+                                i.fa.fa-clock-o 2 days ago
+                            h3.timeline-header
+                                a(href='index') Mina Lee
+                                |  uploaded new photos
+                    li.time-label
+                        i.fa.fa-clock-o.bg-gray
+
+        h2.page-header MyTickets
+        div.row
+            div.col-md-12
+                div.box
+                    div.box-header
+                        h3.box-title Tickets
+                    div.box-body.no-padding
+                        table.table
+                            tbody
+                                tr
+                                    th(style="width: 10px") #
+                                    th Address (Owner)
+                                    th Event
+                                    th(style="width: 80px") Action
+                                tr
+                                    td 1.
+                                    td 0x301AB7263FA8133CB
+                                    td Cyrano de Bergerac
+                                    td 
+                                        button.btn-xs.btn-default.btn-flat(type="button", data-toggle="modal", data-target="#transfertTicketModal")
+                                            i.fa.fa-mail-forward
+
+
+
+
+        h2.page-header MyTickets
+        div.row
+            div.col-md-12
+                div.box.box-success
+                    div.box-header
+                        h3.box-title Events
+                    div.box-body.no-padding
+                        table.table
+                            tbody
+                                tr
+                                    th(style="width: 10px") #
+                                    th Event
+                                    th Date
+                                    th Price
+                                    th(style="width: 180px") Remaining
+                                    th(style="width: 80px") Action
+                                tr
+                                    td 1.
+                                    td Cyrano de Bergerac
+                                    td 08.02.2018
+                                    td 55 CHF
+                                    td 
+                                        div.progress.progress-xs
+                                            div.progress-bar.progress-bar-danger(style="width: 8%")
+                                    td
+                                        button.btn-xs.btn-default.btn-flat(type="button", data-toggle="modal", data-target="#shopModal")
+                                            i.fa.fa-shopping-cart
+                                tr
+                                    td 2.
+                                    td Hamlet
+                                    td 12.02.2018
+                                    td 32 CHF
+                                    td 
+                                        div.progress.progress-xs
+                                            div.progress-bar.progress-bar-yellow(style="width: 28%")
+                                    td
+                                        button.btn-xs.btn-default.btn-flat(type="button", data-toggle="modal", data-target="#shopModal")
+                                            i.fa.fa-shopping-cart
+                                tr
+                                    td 3.
+                                    td Roméo et Juliette
+                                    td 06.04.2018
+                                    td 32 CHF
+                                    td 
+                                        div.progress.progress-xs
+                                            div.progress-bar.progress-bar-green(style="width: 55%")
+                                    td
+                                        button.btn-xs.btn-default.btn-flat(type="button", data-toggle="modal", data-target="#shopModal")
+                                            i.fa.fa-shopping-cart
+                                tr
+                                    td 4.
+                                    td Ubu Roi
+                                    td 08.05.2018
+                                    td 29 CHF
+                                    td 
+                                        div.progress.progress-xs
+                                            div.progress-bar.progress-bar-green(style="width: 82%")
+                                    td
+                                        button.btn-xs.btn-default.btn-flat(type="button", data-toggle="modal", data-target="#shopModal")
+                                            i.fa.fa-shopping-cart
+
+
+
+        h2.page-header MyTickets
+        div.row
+            div.col-md-4
+                div.box.box-widget.widget-user
+                    div.widget-user-header.bg-aqua-active
+                        h3.widget-user-username Elizabeth Pierce
+                        h5.widget-user-desc Web Designer
+                    div.widget-user-image
+                        img.img-circle(src="./static/img/user5-128x128.jpg", alt="User Avatar")                
+                    div.box-footer
+                        div.row
+                            div.col-sm-4.border-right
+                                div.description-block
+                                    h5.description-header 3,200
+                                    span.description-text SEATS
+                            div.col-sm-4.border-right
+                                div.description-block
+                                    h5.description-header 45
+                                    span.description-text CHF
+                            div.col-sm-4
+                                div.description-block
+                                    button.btn-lg.btn-default.btn-flat(type="button", data-toggle="modal", data-target="#shopModal")
+                                        i.fa.fa-shopping-cart
+
+            div.col-md-4
+                div.box.box-widget.widget-user
+                    div.widget-user-header.bg-black(style="background: url('./static/img/photo2.png') center center;")
+                        h3.widget-user-username Elizabeth Pierce
+                        h5.widget-user-desc Web Designer
+                    div.widget-user-image
+                        img.img-circle(src="./static/img/user1-128x128.jpg", alt="User Avatar")                
+                    div.box-footer
+                        div.row
+                            div.col-sm-4.border-right
+                                div.description-block
+                                    h5.description-header 3,200
+                                    span.description-text SEATS
+                            div.col-sm-4.border-right
+                                div.description-block
+                                    h5.description-header 45
+                                    span.description-text CHF
+                            div.col-sm-4
+                                div.description-block
+                                    button.btn-lg.btn-default.btn-flat(type="button", data-toggle="modal", data-target="#shopModal")
+                                        i.fa.fa-shopping-cart
+
+            div.col-md-4
+                div.box.box-widget.widget-user
+                    div.widget-user-header.bg-black(style="background: url('./static/img/photo1.png') center center;")
+                        h3.widget-user-username Elizabeth Pierce
+                        h5.widget-user-desc Web Designer
+                    div.widget-user-image
+                        img.img-circle(src="./static/img/user3-128x128.jpg", alt="User Avatar")                
+                    div.box-footer
+                        div.row
+                            div.col-sm-4.border-right
+                                div.description-block
+                                    h5.description-header 3,200
+                                    span.description-text SEATS
+                            div.col-sm-4.border-right
+                                div.description-block
+                                    h5.description-header 45
+                                    span.description-text CHF
+                            div.col-sm-4
+                                div.description-block
+                                    button.btn-lg.btn-default.btn-flat(type="button", data-toggle="modal", data-target="#shopModal")
+                                        i.fa.fa-shopping-cart
+                        
+        h2.page-header MyTickets
+        div.row
+            div.col-md-12
+                div.box.box-success
+                    div.box-header
+                        h3.box-title Events
+
+                        div.box-tools
+                            ul.pagination.pagination-sm.no-margin.pull-right
+                                li
+                                    a.fa.fa-plus(href="#" data-toggle="modal" data-target="#createEventModal")
+                    div.box-body.no-padding
+                        table.table
+                            tbody
+                                tr
+                                    th(style="width: 10px") #
+                                    th Event
+                                    th Date
+                                    th Price
+                                    th(style="width: 180px") Remaining
+                                    th(style="width: 80px") Action
+                                tr
+                                    td 1.
+                                    td Cyrano de Bergerac
+                                    td 08.02.2018
+                                    td 55 CHF
+                                    td 
+                                        div.progress.progress-xs
+                                            div.progress-bar.progress-bar-danger(style="width: 8%")
+                                    td
+                                        button.btn-xs.btn-default.btn-flat(type="button", data-toggle="modal", data-target="#shopModal")
+                                            i.fa.fa-shopping-cart
+                                        button.btn-xs.btn-default.btn-flat.btn-danger(type="button", data-toggle="modal", data-target="#lockEventModal")
+                                            i.fa.fa-remove
+
+        h2.page-header MyTickets
+        div.row
+            div.col-md-12
+                div.box
+                    div.box-header
+                        h3.box-title Tickets
+                    div.box-body.no-padding
+                        table.table
+                            tbody
+                                tr
+                                    th(style="width: 10px") #
+                                    th Address (Owner)
+                                    th Event
+                                    th(style="width: 80px") Action
+                                tr
+                                    td 1.
+                                    td 0x301AB7263FA8133CB
+                                    td Cyrano de Bergerac
+                                    td 
+                                        button.btn-xs.btn-default.btn-flat(type="button", data-toggle="modal", data-target="#transfertTicketModal")
+                                            i.fa.fa-mail-forward
+                                        button.btn-xs.btn-default.btn-flat.btn-danger(type="button", data-toggle="modal", data-target="#burnModal")
+                                            i.fa.fa-remove
+

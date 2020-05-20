@@ -1,0 +1,17 @@
+doctype html
+html
+  head
+    include layout/header.pug
+    block additionalheaders
+  body.hold-transition.sidebar-mini
+    div.wrapper
+        include layout/navigation.pug
+        include layout/sidebar.pug
+        div.content-wrapper
+            block content
+        include layout/footer.pug
+        include layout/ctrlsidebar.pug
+    //- include layout/modals.pug
+    include layout/js.pug
+    block additionalscripts
+    

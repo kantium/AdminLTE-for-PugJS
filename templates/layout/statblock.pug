@@ -1,0 +1,11 @@
+mixin statblock(title, value)
+    div.col-lg-3.col-xs-6
+        div.small-box(class!=attributes.color)
+            div.inner
+                h3!= value
+                p= title
+            div.icon
+                i.fa(class!=attributes.icon)
+            a(href='index').small-box-footer 
+                | More info 
+                i.fa.fa-arrow-circle-right

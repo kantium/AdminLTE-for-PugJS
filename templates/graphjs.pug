@@ -1,0 +1,88 @@
+extends layout/base
+
+block additionalheaders
+    link(rel='stylesheet', href='/static/plugins/Chartjs/Chart.min.css')
+
+block additionalscripts
+    script(type='text/javascript', src='/static/plugins/Chartjs/Chart.min.js')
+    script(type='text/javascript', src='/static/plugins/Chartjs/demo.js')
+
+block content 
+    section.content-header 
+        h1 hello1
+            small Control panel
+        ol.breadcrumb
+            li
+                a(href='index').logo
+                    i.fa.fa-dashboard
+                    | Home
+            li.active Dashboard
+
+    section.content
+        div.row
+            div.col-md-6
+                div.box.box-primary
+                    div.box-header.with-border
+                        h3.box-title Bar Chart
+                        div.box-tools.pull-right
+                            button.btn.btn-box-tool(type="button",data-widget="collapse")
+                                i.fa.fa-minus
+                            button.btn.btn-box-tool(type="button",data-widget="remove")
+                                i.fa.fa-times
+                    div.box-body
+                        div.chart
+                            canvas#areaChart1(style="height: 250px; width: 491px;", height="250", width="491")
+
+                div.box.box-danger
+                    div.box-header.with-border
+                        h3.box-title Area Chart
+                        div.box-tools.pull-right
+                            button.btn.btn-box-tool(type="button",data-widget="collapse")
+                                i.fa.fa-minus
+                            button.btn.btn-box-tool(type="button",data-widget="remove")
+                                i.fa.fa-times
+                    div.box-body
+                        div.chart
+                            canvas#areaChart3(style="height: 250px; width: 491px;", height="250", width="491")
+
+                div.box.box-warning
+                    div.box-header.with-border
+                        h3.box-title Bar Chart
+                        div.box-tools.pull-right
+                            button.btn.btn-box-tool(type="button",data-widget="collapse")
+                                i.fa.fa-minus
+                            button.btn.btn-box-tool(type="button",data-widget="remove")
+                                i.fa.fa-times
+                    div.box-body
+                        div.chart
+                            canvas#areaChart5(style="height: 250px; width: 491px;", height="250", width="491")
+
+
+            div.col-md-6
+
+                div.box.box-success
+                    div.box-header.with-border
+                        h3.box-title Line Chart
+                        div.box-tools.pull-right
+                            button.btn.btn-box-tool(type="button",data-widget="collapse")
+                                i.fa.fa-minus
+                            button.btn.btn-box-tool(type="button",data-widget="remove")
+                                i.fa.fa-times
+                    div.box-body
+                        div.chart
+                            canvas#areaChart2(style="height: 250px; width: 491px;", height="250", width="491")
+
+                div.box.box-info
+                    div.box-header.with-border
+                        h3.box-title Donut Chart
+                        div.box-tools.pull-right
+                            button.btn.btn-box-tool(type="button",data-widget="collapse")
+                                i.fa.fa-minus
+                            button.btn.btn-box-tool(type="button",data-widget="remove")
+                                i.fa.fa-times
+                    div.box-body
+                        div.chart
+                            canvas#areaChart4(style="height: 250px; width: 491px;", height="250", width="491")
+    
+    
+

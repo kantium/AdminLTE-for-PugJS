@@ -1,0 +1,16 @@
+extends layout/base
+block content 
+    section.content-header 
+        h1 My Tickets
+            //- small Control panel
+        ol.breadcrumb
+            li
+                a(href='index').logo
+                    i.fa.fa-ticket
+                    | Home
+            li.active My Tickets
+
+    section.content
+        //- h2.page-header Statistics
+        div.row
+           include layout/ticketsclient.pug 

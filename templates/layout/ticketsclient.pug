@@ -1,0 +1,26 @@
+div.col-md-12
+    div.box
+        div.box-header
+            h3.box-title Tickets
+        div.box-body.no-padding
+            table.table#ticketsclienttable
+                tbody
+                    tr
+                        th(style="width: 10px") #
+                        th Event
+                        th Address (Owner)
+                        th BlockNumber
+                        th(style="width: 50px") isActive
+                        th(style="width: 50px") Count
+                        th(style="width: 80px") Action
+                //    
+                    tr
+                        td 1.
+                        td 0x301AB7263FA8133CB
+                        td Cyrano de Bergerac
+                        td 
+                            button.btn-xs.btn-default.btn-flat(type="button", data-toggle="modal", data-target="#transfertTicketModal")
+                                i.fa.fa-mail-forward
+
+        div.overlay#ticketsclienttableoverlay
+            i.fa.fa-refresh.fa-spin

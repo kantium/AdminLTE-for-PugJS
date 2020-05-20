@@ -1,0 +1,37 @@
+extends layout/base
+block content 
+    section.content-header 
+        h1 DEVPAGE
+            //- small Control panel
+        ol.breadcrumb
+            li
+                a(href='index').logo
+                    i.fa.fa-gears
+                    | Home
+            li.active DEVPAGE
+
+    section.content
+        div.row
+            div.col-md-6
+                div.box.box-success
+                    div.box-header
+                        h3.box-title Variables
+                    div.box-body.no-padding
+                        table.table
+                            tbody
+                                tr
+                                    th(style="width: 10px") #
+                                    th value
+                                tr
+                                    td 1.
+                                    td#val1
+                                tr
+                                    td 2.
+                                    td#val2
+                                tr
+                                    td 3.
+                                    td#val3
+            div.col-md-6
+                span.glyphicon.glyphicon-search(aria-hidden="true")
+                  
+            
