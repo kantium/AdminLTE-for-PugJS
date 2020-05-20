@@ -5,14 +5,14 @@ This is an [AdminLTE](https://adminlte.io/themes/AdminLTE/index2.html) rewrite f
 It also works with [Flask](https://flask.palletsprojects.com/en/1.1.x/) using the [PyPugJS](https://pypi.org/project/pypugjs/).
 
 
-![AdminLTE](https://github.com/kantium/raw/master/static/img/site.png)
+![AdminLTE](https://raw.githubusercontent.com/kantium/AdminLTE-for-PugJS/master/static/img/site.png)
 
 ## Warning
 
 There is a difference between PyPugJS and PugJS on how Pug files in subdirectories are handled.
-You need to rename ether basepy.pug or basejs.pug to base.pug before use (located in templates/layout/baseXX.pug) 
+You need to rename ether ```basepy.pug``` or ```basejs.pug``` to ```base.pug``` before use (located in ```templates/layout/baseXX.pug```) 
 
-## Python
+## Python3
 
 ```
 mv templates/layout/basepy.pug templates/layout/base.pug
